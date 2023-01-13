@@ -16,6 +16,9 @@
 		0452CEB829719EE90074F19F /* Rick_MortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452CEB729719EE90074F19F /* Rick_MortyTests.swift */; };
 		0452CEC229719EE90074F19F /* Rick_MortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452CEC129719EE90074F19F /* Rick_MortyUITests.swift */; };
 		0452CEC429719EE90074F19F /* Rick_MortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452CEC329719EE90074F19F /* Rick_MortyUITestsLaunchTests.swift */; };
+		0452CED12971A1A10074F19F /* APIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452CED02971A1A10074F19F /* APIFetcher.swift */; };
+		0452CED32971A2650074F19F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452CED22971A2650074F19F /* Model.swift */; };
+		0452CED52971C76E0074F19F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452CED42971C76E0074F19F /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		0452CEBD29719EE90074F19F /* Rick&MortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick&MortyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0452CEC129719EE90074F19F /* Rick_MortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_MortyUITests.swift; sourceTree = "<group>"; };
 		0452CEC329719EE90074F19F /* Rick_MortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_MortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0452CED02971A1A10074F19F /* APIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFetcher.swift; sourceTree = "<group>"; };
+		0452CED22971A2650074F19F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0452CED42971C76E0074F19F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 			children = (
 				0452CEA129719EE80074F19F /* Rick_MortyApp.swift */,
 				0452CEA329719EE80074F19F /* ContentView.swift */,
+				0452CED42971C76E0074F19F /* MainView.swift */,
+				0452CED22971A2650074F19F /* Model.swift */,
+				0452CED02971A1A10074F19F /* APIFetcher.swift */,
 				0452CEA529719EE90074F19F /* Assets.xcassets */,
 				0452CEAA29719EE90074F19F /* Persistence.swift */,
 				0452CEAC29719EE90074F19F /* Rick_Morty.xcdatamodeld */,
@@ -264,7 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0452CEAB29719EE90074F19F /* Persistence.swift in Sources */,
+				0452CED52971C76E0074F19F /* MainView.swift in Sources */,
 				0452CEA429719EE80074F19F /* ContentView.swift in Sources */,
+				0452CED12971A1A10074F19F /* APIFetcher.swift in Sources */,
+				0452CED32971A2650074F19F /* Model.swift in Sources */,
 				0452CEAE29719EE90074F19F /* Rick_Morty.xcdatamodeld in Sources */,
 				0452CEA229719EE80074F19F /* Rick_MortyApp.swift in Sources */,
 			);
