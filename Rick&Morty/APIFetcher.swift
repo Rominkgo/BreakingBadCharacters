@@ -22,26 +22,8 @@ class ApiFetcher: ObservableObject {
     func fetchCharactersFromApi() {
         
         guard let url = URL(string: "https://swapi.dev/api/planets") else {return}
-  //David Method
-/*
-//        let url = URL(string: endpoint)!
-//        let request = URLRequest(url: url)
-//        let rawResponse = try await URLSession.shared.dataTask(with: request)
-//        let response = try JSONDecoder().decode(APIData.self, from: rawResponse)
-//
-//        return response
-        
-//        1. create the publisher
-//        2. suscribe to the publisher on a background Thread
-//        3. receive on main Thread
-//        4. tryMap (check that the data is good)
-//        5. decode (decode data into PostModels)
-        //6. sink (put the item into our app)
-        //7. store (cancel subscription
-*/
 
         URLSession.shared.dataTaskPublisher(for: url)
-//            .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
             .tryMap { (data, response) -> Data in
                guard
@@ -56,8 +38,7 @@ class ApiFetcher: ObservableObject {
                 print("Completion: \(completion)")
             } receiveValue: { [weak self] (returnedData) in
                 self?.planets = returnedData.results
-                
-            }
+                }
             .store(in: &cancellables)
            }
 }

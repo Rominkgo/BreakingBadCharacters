@@ -9,7 +9,6 @@ import Foundation
 
 struct APIData: Decodable {
     let results: [Planet]
-    
 }
 
 struct Planet: Decodable, Identifiable {
@@ -21,7 +20,6 @@ struct Planet: Decodable, Identifiable {
         case name
         case terrain
     }
-
 }
 
 
