@@ -8,14 +8,20 @@
 import Foundation
 
 struct APIData: Decodable {
-    let data: [BBCharacter]
+    let results: [Planet]
+    
 }
 
-struct BBCharacter: Identifiable, Decodable {
-    let char_id: Int
+struct Planet: Decodable, Identifiable {
     let name: String
-    let nickname: String
-    let img: String
-    let portrayed: String
+    let terrain: String
+    var id = UUID()
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case terrain
+    }
+
 }
+
 

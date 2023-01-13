@@ -11,13 +11,17 @@ import Combine
 
 class ApiFetcher: ObservableObject {
     
-    @Published var characters: [BBCharacter] = []
+    @Published var planets: [Planet] = []
+    
+    init() {
+        fetchCharactersFromApi()
+    }
     
     var cancellables = Set<AnyCancellable>()
     
     func fetchCharactersFromApi() {
         
-        guard let url = URL(string: "https://www.breakingbadapi.com/api/") else {return}
+        guard let url = URL(string: "https://swapi.dev/api/planets") else {return}
   //David Method
 /*
 //        let url = URL(string: endpoint)!
@@ -37,7 +41,7 @@ class ApiFetcher: ObservableObject {
 */
 
         URLSession.shared.dataTaskPublisher(for: url)
-            .subscribe(on: DispatchQueue.global(qos: .background))
+//            .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
             .tryMap { (data, response) -> Data in
                guard
@@ -51,11 +55,9 @@ class ApiFetcher: ObservableObject {
             .sink { (completion) in
                 print("Completion: \(completion)")
             } receiveValue: { [weak self] (returnedData) in
-                self?.characters = returnedData.data
+                self?.planets = returnedData.results
+                
             }
             .store(in: &cancellables)
-       
-    }
-    
-    
+           }
 }
